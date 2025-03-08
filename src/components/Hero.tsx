@@ -1,4 +1,4 @@
-import genie1 from "../assets/genie1.png";
+import genie from "../assets/genie.png";
 import lantern from "../assets/lantern.png";
 
 export const Hero = () => {
@@ -15,9 +15,9 @@ export const Hero = () => {
 
             {/* Genie Image */}
             <img
-              src={genie1}
+              src={genie}
               alt="Magic Lantern"
-              className="mt-20 w-full max-h-[500px] object-fit relative z-10 mix-blend-screen brightness-100  rounded-md justify-center self-center flex"
+              className="mt-20 w-full max-h-[500px] object-fit relative z-10 mix-blend-screen rounded-md justify-center self-center flex"
             />
 
             {/* Lantern Positioned at Genie's Base */}
@@ -29,7 +29,7 @@ export const Hero = () => {
           </div>
 
           {/* Speech Bubble */}
-          <div className="speech-bubble animate-float p-6 shadow-xl  lg:w-[500px] -translate-y-150 translate-x-60">
+          <div className="speech-bubble animate-float p-6 shadow-xl  lg:w-[500px] -translate-y-150 translate-x-50">
             <p
               className="text-2xl lg:text-4xl text-right font-arabic font-bold text-white tracking-wide"
               style={{ direction: "rtl" }}
