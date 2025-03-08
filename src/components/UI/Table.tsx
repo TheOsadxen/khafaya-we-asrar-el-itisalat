@@ -8,7 +8,17 @@ import {
 } from "@tanstack/react-table";
 import { useState } from "react";
 
-export const Table = ({ data, columns }: { data: any; columns: any }) => {
+export const Table = ({
+  data,
+  columns,
+  title,
+  size = "md",
+}: {
+  data: any;
+  columns: any;
+  title?: string;
+  size?: "sm" | "md" | "lg";
+}) => {
   const [expanded, setExpanded] = useState({});
 
   const table = useReactTable({
@@ -25,13 +35,28 @@ export const Table = ({ data, columns }: { data: any; columns: any }) => {
 
   return (
     <div
-      className="overflow-x-auto py-4 px-2 w-3/4 flex justify-center mx-auto"
+      className="overflow-x-auto  px-2 w-3/4 flex justify-center mx-auto flex-col"
       dir="rtl"
     >
+      {title && (
+        <div className="text-xl font-bold font-arabic lg:text-3xl text-center w-full mx-auto bg-[#39b0e5] text-white py-2 rounded-t-md">
+          {title}
+        </div>
+      )}
+
       <table className="min-w-full bg-white border-collapse">
         <thead>
           {table.getHeaderGroups().map((headerGroup) => (
-            <tr key={headerGroup.id} className="bg-[#39b0e5] text-white">
+            <tr
+              key={headerGroup.id}
+              className={`bg-[#39b0e5] text-white ${
+                size === "lg"
+                  ? "text-2xl"
+                  : size === "md"
+                  ? "text-lg"
+                  : "text-md"
+              }`}
+            >
               {headerGroup.headers.map((header) => (
                 <th
                   key={header.id}

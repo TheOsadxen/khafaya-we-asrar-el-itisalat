@@ -294,6 +294,116 @@ function App() {
     }),
   ];
 
+  /**************/
+  // Data for the first table (All networks unlimited local calls)
+  const allNetworksData = [
+    {
+      package: "2000 دقيقة محلية شهرية",
+      insideOutsideNetwork: "2000",
+      insideNetwork: "-",
+      price: "40",
+      validity: "30يوم",
+      activationCode: "*666*208#",
+    },
+    {
+      package: "500 دقيقة محلية شهرية",
+      insideOutsideNetwork: "500",
+      insideNetwork: "-",
+      price: "30",
+      validity: "30 يوم",
+      activationCode: "*666*230#",
+    },
+    {
+      package: "1000 دقيقة محلية اسبوعية",
+      insideOutsideNetwork: "1000",
+      insideNetwork: "-",
+      price: "20",
+      validity: "7 أيام",
+      activationCode: "*666*206#",
+    },
+    {
+      package: "200 دقيقة محلية اسبوعية",
+      insideOutsideNetwork: "200",
+      insideNetwork: "-",
+      price: "15",
+      validity: "7 أيام",
+      activationCode: "*666*20 7#",
+    },
+    {
+      package: "200 دقيقة محلية يومية",
+      insideOutsideNetwork: "200",
+      insideNetwork: "-",
+      price: "5",
+      validity: "يوم",
+      activationCode: "*666*205#",
+    },
+    {
+      package: "30 دقيقة محلية يومية",
+      insideOutsideNetwork: "30",
+      insideNetwork: "-",
+      price: "3",
+      validity: "يوم",
+      activationCode: "*666*20 1#",
+    },
+  ];
+
+  // Data for the second table (Libara network unlimited local calls)
+  const libaraNetworkData = [
+    {
+      package: "مكالمات لامحدود الشهرية",
+      insideOutsideNetwork: "-",
+      insideNetwork: "لا محدود",
+      price: "22",
+      validity: "30يوم",
+      activationCode: "*666*130#",
+    },
+    {
+      package: "مكالمات لامحدود الاسبوعية",
+      insideOutsideNetwork: "-",
+      insideNetwork: "لا محدود",
+      price: "6",
+      validity: "7 أيام",
+      activationCode: "*666*107#",
+    },
+    {
+      package: "مكالمات لامحدود اليومية",
+      insideOutsideNetwork: "-",
+      insideNetwork: "لا محدود",
+      price: "1.5",
+      validity: "يوم",
+      activationCode: "*666*101#",
+    },
+  ];
+
+  const networkColumns = [
+    columnHelper.accessor("package", {
+      header: () => (
+        <span className="font-arabic font-bold">"الــبــاقــــة"</span>
+      ),
+      cell: (info) => <span className="font-arabic">{info.getValue()}</span>,
+    }),
+    columnHelper.accessor("insideOutsideNetwork", {
+      header: "(داخل وخارج الشبكة)",
+      cell: (info) => <span className="font-arabic">{info.getValue()}</span>,
+    }),
+    columnHelper.accessor("insideNetwork", {
+      header: "(داخل الشبكة)",
+      cell: (info) => <span className="font-arabic">{info.getValue()}</span>,
+    }),
+    columnHelper.accessor("price", {
+      header: "سعر الباقة ر/يال",
+      cell: (info) => <span className="font-arabic">{info.getValue()}</span>,
+    }),
+    columnHelper.accessor("validity", {
+      header: "الصلاحية",
+      cell: (info) => <span className="font-arabic">{info.getValue()}</span>,
+    }),
+    columnHelper.accessor("activationCode", {
+      header: "رمز التفعيل",
+      cell: (info) => <span className="font-arabic">{info.getValue()}</span>,
+    }),
+  ];
+
   const flags = [
     "us",
     "ca",
@@ -321,16 +431,18 @@ function App() {
 
       <div className="mt-20"></div>
 
-      <div className="text-xl font-bold font-arabic lg:text-3xl text-center mb-4 bg-[#39b0e5] text-white py-2 rounded-t-md">
-        الباقات الدولية
-      </div>
       <Table
         data={internationalPackagesData}
         columns={internationalPackagesColumns}
+        title="الباقات الدولية"
       />
+
+      <div className="mt-8"></div>
+
       <Table
         data={internationalPackagesData2}
         columns={internationalPackagesColumns2}
+        title="الباقات الدولية"
       />
 
       <div className="mt-20"></div>
@@ -374,6 +486,7 @@ function App() {
       </div>
 
       <div className="mt-20"></div>
+      <Table data={flexPackagesData} columns={flexPackagesColumns} size="lg" />
 
       <div className="p-4">
         <h2 className="text-xl font-bold text-red-500 text-center mb-2">
@@ -391,7 +504,20 @@ function App() {
           ))}
         </div>
 
-        <Table data={flexPackagesData} columns={flexPackagesColumns} />
+        <div className="mt-20"></div>
+
+        <Table
+          data={allNetworksData}
+          columns={networkColumns}
+          title="باقات المكالمات المحلية اللامحدودة على جميع الشبكات"
+        />
+        <div className="mt-20"></div>
+
+        <Table
+          data={libaraNetworkData}
+          columns={networkColumns}
+          title="باقات المكالمات المحلية اللامحدودة على  شبكة ليبارا"
+        />
       </div>
       <Footer />
     </div>
