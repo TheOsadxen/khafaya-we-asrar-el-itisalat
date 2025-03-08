@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Marhey:wght@300..700&display=swap');
+
+@import "tailwindcss";
+
+
+
+.font-arabic {
+    font-family: "Marhey", sans-serif;
+
+}
+
+.right-to-left {
+    direction: rtl;
+    text-align: right;
+}
+
+
+.speech-bubble {
+    position: relative;
+    background: #36BCE7;
+    border-radius: .4em;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    max-width: 400px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.speech-bubble:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 30%;
+    width: 0;
+    height: 0;
+    border: 44px solid transparent;
+    border-top-color: #36BCE7;
+    border-bottom: 0;
+    border-left: 0;
+    margin-left: -22px;
+    margin-bottom: -44px;
+}
+
+
+@keyframes slide-in-left {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slide-in-right {
+    0% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(15px);
+    }
+}
+
+.animate-slide-in-left {
+    animation: slide-in-left 1s ease-out forwards;
+}
+
+.animate-slide-in-right {
+    animation: slide-in-right 1s ease-out forwards;
+}
+
+.animate-float {
+    animation: float 3s ease-in-out infinite;
+}
