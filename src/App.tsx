@@ -1,4 +1,4 @@
-import { createColumnHelper, getCoreRowModel } from "@tanstack/table-core";
+import { createColumnHelper } from "@tanstack/table-core";
 import "./App.css";
 import { Footer } from "./components/Footer";
 import { Hero } from "./components/Hero";
@@ -6,7 +6,6 @@ import { Navbar } from "./components/Navbar";
 import { Table } from "./components/UI/Table";
 import genie2 from "./assets/genie2.png";
 import { useEffect, useRef, useState } from "react";
-import { flexRender, useReactTable } from "@tanstack/react-table";
 
 function App() {
   const columnHelper = createColumnHelper();

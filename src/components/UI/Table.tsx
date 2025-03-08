@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import {
   flexRender,
   getCoreRowModel,
@@ -6,7 +8,7 @@ import {
 } from "@tanstack/react-table";
 import { useState } from "react";
 
-export const Table = ({ data, columns }) => {
+export const Table = ({ data, columns }: { data: any; columns: any }) => {
   const [expanded, setExpanded] = useState({});
 
   const table = useReactTable({
@@ -16,7 +18,7 @@ export const Table = ({ data, columns }) => {
       expanded,
     },
     onExpandedChange: setExpanded,
-    getSubRows: (row) => row.subRows,
+    getSubRows: (row: any) => row.subRows,
     getCoreRowModel: getCoreRowModel(),
     getExpandedRowModel: getExpandedRowModel(),
   });
