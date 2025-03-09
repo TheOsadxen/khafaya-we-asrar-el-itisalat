@@ -5,8 +5,8 @@ export const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center">
           {/* Logo and company info */}
           <div className="mb-6 md:mb-0 text-center md:text-right">
-            <h3 className="font-arabic text-2xl font-bold mb-2">
-              مارد الاتصالات
+            <h3 className="font-arabic text-2xl font-bold mb-2 text-[#36BCE7]">
+              خفايا واسرار الاتصالات
             </h3>
             <p className="font-arabic text-white/70">
               خدمات الاتصالات المتكاملة
@@ -20,14 +20,14 @@ export const Footer = () => {
               href="https://wa.me/+966XXXXXXXXX"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center space-x-2 bg-[#25D366]/90 hover:bg-[#25D366] text-white px-4 py-2 rounded-full transition-all hover:shadow-lg"
+              className="flex items-center space-x-2 bg-[#25D366]/90 hover:bg-[#25D366] px-4 py-2 rounded-full transition-all hover:shadow-lg"
             >
               <span className="font-arabic font-bold text-lg">
                 +9999 878 57 966
               </span>
-              <div className="bg-white rounded-full p-1 flex items-center justify-center">
+              {/* <div className="bg-white rounded-full p-1 flex items-center justify-center">
                 +9999 878 57 966
-              </div>
+              </div> */}
             </a>
           </div>
         </div>
@@ -35,7 +35,8 @@ export const Footer = () => {
         {/* Footer bottom */}
         <div className="mt-8 pt-6 border-t border-white/20 text-center">
           <p className="font-arabic text-white/60">
-            © {new Date().getFullYear()} مارد الاتصالات - جميع الحقوق محفوظة
+            © {new Date().getFullYear()} خفايا واسرار الاتصالات - جميع الحقوق
+            محفوظة
           </p>
         </div>
       </div>
