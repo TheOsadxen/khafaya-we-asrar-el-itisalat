@@ -16,7 +16,7 @@ export const Table = ({
 }: {
   data: any;
   columns: any;
-  title?: string;
+  title?: React.ReactElement;
   size?: "sm" | "md" | "lg";
 }) => {
   const [expanded, setExpanded] = useState({});

@@ -6,6 +6,7 @@ import { Navbar } from "./components/Navbar";
 import { Table } from "./components/UI/Table";
 import genie2 from "./assets/genie2.png";
 import { useEffect, useRef, useState } from "react";
+import { yallaPackageData } from "./data/tables";
 
 function App() {
   const columnHelper = createColumnHelper();
@@ -114,6 +115,47 @@ function App() {
       activationCode: "*666*35#",
       subRows: [],
     },
+  ];
+
+  const yallaPackageColumns = [
+    columnHelper.accessor("package", {
+      cell: (info) => <span className="font-arabic "> {info.getValue()}</span>,
+      header: () => <span className="font-arabic font-bold">الباقــة</span>,
+    }),
+    columnHelper.accessor("duration", {
+      cell: (info) => <span className="font-arabic "> {info.getValue()}</span>,
+      header: () => (
+        <span className="font-arabic font-bold">
+          دقائق محلية (داخل وخارج الشبكة)
+        </span>
+      ),
+    }),
+    columnHelper.accessor("minutes", {
+      cell: (info) => <span className="font-arabic "> {info.getValue()}</span>,
+      header: () => <span className="font-arabic font-bold">بيانات</span>,
+    }),
+    columnHelper.accessor("data", {
+      cell: (info) => <span className="font-arabic "> {info.getValue()}</span>,
+      header: () => <span className="font-arabic font-bold">سوشيال ميديا</span>,
+    }),
+    columnHelper.accessor("socialData", {
+      cell: (info) => <span className="font-arabic "> {info.getValue()}</span>,
+      header: () => <span className="font-arabic font-bold">عرض ترويجي</span>,
+    }),
+    columnHelper.accessor("price", {
+      cell: (info) => `${info.getValue()}`,
+      header: () => (
+        <span className="font-arabic font-bold">سعر الباقة/ ريال</span>
+      ),
+    }),
+    columnHelper.accessor("validity", {
+      cell: (info) => <span className="font-arabic "> {info.getValue()}</span>,
+      header: () => <span className="font-arabic font-bold">الصلاحية</span>,
+    }),
+    columnHelper.accessor("activationCode", {
+      cell: (info) => <span className="font-arabic "> {info.getValue()}</span>,
+      header: () => <span className="font-arabic font-bold">رمز التفعيل</span>,
+    }),
   ];
 
   /*----------------------------------------------*/
@@ -378,28 +420,38 @@ function App() {
   const networkColumns = [
     columnHelper.accessor("package", {
       header: () => (
-        <span className="font-arabic font-bold">"الــبــاقــــة"</span>
+        <span className="font-arabic font-bold">الــبــاقــــة</span>
+      ),
+      cell: (info) => (
+        <span className="font-arabic text-[#1670B9] text-xl">
+          {info.getValue()}
+        </span>
+      ),
+    }),
+    columnHelper.accessor("insideOutsideNetwork", {
+      header: () => (
+        <span className="font-arabic font-bold"> (داخل وخارج الشبكة)</span>
       ),
       cell: (info) => <span className="font-arabic">{info.getValue()}</span>,
     }),
-    columnHelper.accessor("insideOutsideNetwork", {
-      header: "(داخل وخارج الشبكة)",
-      cell: (info) => <span className="font-arabic">{info.getValue()}</span>,
-    }),
     columnHelper.accessor("insideNetwork", {
-      header: "(داخل الشبكة)",
+      header: () => (
+        <span className="font-arabic font-bold">(داخل الشبكة)</span>
+      ),
       cell: (info) => <span className="font-arabic">{info.getValue()}</span>,
     }),
     columnHelper.accessor("price", {
-      header: "سعر الباقة ر/يال",
+      header: () => (
+        <span className="font-arabic font-bold">سعر الباقة ر/يال</span>
+      ),
       cell: (info) => <span className="font-arabic">{info.getValue()}</span>,
     }),
     columnHelper.accessor("validity", {
-      header: "الصلاحية",
+      header: () => <span className="font-arabic font-bold">الصلاحية</span>,
       cell: (info) => <span className="font-arabic">{info.getValue()}</span>,
     }),
     columnHelper.accessor("activationCode", {
-      header: "رمز التفعيل",
+      header: () => <span className="font-arabic font-bold">رمز التفعيل</span>,
       cell: (info) => <span className="font-arabic">{info.getValue()}</span>,
     }),
   ];
@@ -434,7 +486,7 @@ function App() {
       <Table
         data={internationalPackagesData}
         columns={internationalPackagesColumns}
-        title="الباقات الدولية"
+        title={<p>الباقات الدولية</p>}
       />
 
       <div className="mt-8"></div>
@@ -442,7 +494,7 @@ function App() {
       <Table
         data={internationalPackagesData2}
         columns={internationalPackagesColumns2}
-        title="الباقات الدولية"
+        title={<p>الباقات الدولية</p>}
       />
 
       <div className="mt-20"></div>
@@ -509,14 +561,38 @@ function App() {
         <Table
           data={allNetworksData}
           columns={networkColumns}
-          title="باقات المكالمات المحلية اللامحدودة على جميع الشبكات"
+          title={
+            <p>
+              باقات المكالمات المحلية اللامحدودة{" "}
+              <span className="text-[#1F295D]">علي جميع الشبكات</span>
+            </p>
+          }
         />
         <div className="mt-20"></div>
 
         <Table
           data={libaraNetworkData}
           columns={networkColumns}
-          title="باقات المكالمات المحلية اللامحدودة على  شبكة ليبارا"
+          title={
+            <p>
+              باقات المكالمات المحلية اللامحدودة{" "}
+              <span className="text-[#1F295D]">علي شبكة ليبارا</span>
+            </p>
+          }
+        />
+
+        <div className="mt-5"></div>
+
+        <p className="font-arabic font-bold text-right text-xl px-[13%]">
+          جميع اسعار الباقات اعلاه <span className="underline">غير شامله</span>{" "}
+          القيمة المضافة*
+        </p>
+        <div className="mt-20"></div>
+
+        <Table
+          columns={yallaPackageColumns}
+          data={yallaPackageData}
+          title={<p>باقات يلا</p>}
         />
       </div>
       <Footer />
