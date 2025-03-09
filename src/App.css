@@ -79,6 +79,18 @@
     }
 }
 
+@keyframes float-up-and-down {
+
+    0%,
+    100% {
+        transform: translateY(0%);
+    }
+
+    50% {
+        transform: translateY(15px);
+    }
+}
+
 @keyframes float {
 
     0%,
@@ -99,10 +111,19 @@
     animation: slide-in-right 1s ease-out forwards;
 }
 
+.animate-rotate-in-right {
+    animation: rotate-in-right 1s ease-out forwards;
+}
+
+
 .animate-slide-in-top {
     animation: slide-in-top 1s ease-out forwards;
 }
 
 .animate-float {
     animation: float 3s ease-in-out infinite;
+}
+
+.animate-float-up-and-down {
+    animation: float-up-and-down 3s ease-in-out infinite;
 }

@@ -28,14 +28,21 @@ export const Hero = () => {
               مرحبًا بك في عالم{" "}
               <span className="text-[#36BCE7]">خفايا واسرار الاتصالات</span>
             </h1>
-            <p className="text-white text-lg lg:text-xl opacity-80 text-right right-to-left">
+            <p className="text-white text-lg lg:text-xl opacity-80 text-right right-to-left mt-4">
               اكتشف ازاي مارد الاتصالات ممكن يجيب لك أفضل العروض والخدمات بسهولة
               وسرعة
             </p>
             <p className="text-white text-lg lg:text-xl opacity-80 mb-8 text-right right-to-left">
               شوف دلوقتي باقتنا المختلفه لو مسافر السعودية
             </p>
-            <button className="bg-gradient-to-r from-[#36BCE7] to-[#1E90FF] text-white px-8 py-4 rounded-full shadow-lg text-2xl font-extrabold transition-all hover:scale-105 hover:shadow-xl hover:from-[#1E90FF] hover:to-[#36BCE7] active:scale-95 active:shadow-md cursor-pointer">
+            <button
+              onClick={() =>
+                document
+                  .getElementById("target-section")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
+              className="bg-gradient-to-r font-arabic from-[#36BCE7] to-[#1E90FF] text-white px-8 py-4 rounded-full shadow-lg text-2xl font-extrabold transition-all hover:scale-105 hover:shadow-xl hover:from-[#1E90FF] hover:to-[#36BCE7] active:scale-95 active:shadow-md cursor-pointer"
+            >
               اكتشف المزيد
             </button>
           </div>
