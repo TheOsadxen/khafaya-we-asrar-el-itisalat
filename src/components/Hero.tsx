@@ -2,11 +2,11 @@ import genie from "../assets/genie.png";
 
 export const Hero = () => {
   return (
-    <div>
-      <div className="w-full flex flex-col lg:flex-row items-center justify-center gap-8 max-w-[2200px] mx-auto lg:px-[8%]">
+    <div className="">
+      <div className="w-full flex flex-col lg:flex-row items-center justify-center gap-12 md:gap-8 max-w-[2200px] mx-auto lg:px-[8%] ">
         {/* Left Side: Genie Image (Always on Left for Large Screens) */}
         <div className="flex flex-col items-center lg:items-start relative w-full lg:w-1/2 justify-center">
-          <div className="relative animate-slide-in-left flex items-center justify-center w-full h-full lg:mt-20 ml-16 ">
+          <div className="relative animate-slide-in-left flex items-center justify-center w-full h-full mt-24 lg:mt-20 ml-16 ">
             {/* Genie Glow */}
             <div className="absolute inset-0 bg-blue-500/30 blur-2xl rounded-full transform scale-110"></div>
 
@@ -20,7 +20,7 @@ export const Hero = () => {
         </div>
 
         {/* Right Side: Text Content (Always on Right for Large Screens) */}
-        <div className="w-full lg:w-1/2 text-center lg:text-right space-y-3 p-6 flex flex-col items-center lg:items-end animate-slide-in-right">
+        <div className="w-full lg:w-1/2 text-center lg:text-right space-y-3 p-6 flex flex-col items-center lg:items-end animate-slide-in-right mt-12 md:mt-0">
           <h1 className="text-white text-3xl sm:text-4xl lg:text-6xl font-bold leading-tight font-arabic">
             مرحبًا بك في عالم{" "}
             <span className="text-[#36BCE7]">خفايا واسرار الاتصالات</span>

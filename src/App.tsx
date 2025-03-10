@@ -372,11 +372,10 @@ function App() {
               alt="Magic Lantern"
               className={`mt-10 sm:mt-16 lg:mt-20 w-[80%] max-w-[300px] sm:max-w-[500px] lg:max-w-[auto] 
                     relative z-10 mix-blend-screen object-contain scale-150 md:scale-250 rounded-md transition-all duration-700 ease-in-out 
-                    ${
-                      isVisible.flexGenie
-                        ? "opacity-100 translate-x-5 -translate-y-10 md:-translate-y-39 absolute bottom-0"
-                        : "opacity-0 translate-y-10"
-                    }`}
+                    ${isVisible.flexGenie
+                  ? "opacity-100 translate-x-5 -translate-y-10 md:-translate-y-39 absolute bottom-0"
+                  : "opacity-0 translate-y-10"
+                }`}
             />
           </div>
         </div>
@@ -463,11 +462,10 @@ function App() {
               ref={genie2Ref}
               src={geniee}
               alt="Magic Lantern"
-              className={` w-[350px] sm:w-[450px] md:w-[500px] lg:w-[auto] max-h-[500px] md:max-h-[900px] items-end scale-125 relative z-10 mix-blend-screen object-contain  rounded-md justify-end flex transition-all duration-700 ease-in-out ${
-                isVisible.onlyNetGenie
-                  ? "opacity-100 -rotate-31 md:-rotate-15 translate-y-5 -translate-x-8 md:-translate-x-80"
-                  : "opacity-0 translate-y-10"
-              }`}
+              className={` w-[350px] sm:w-[450px] md:w-[500px] lg:w-[auto] max-h-[500px] md:max-h-[900px] items-end scale-125 relative z-10 mix-blend-screen object-contain  rounded-md justify-end flex transition-all duration-700 ease-in-out ${isVisible.onlyNetGenie
+                ? "opacity-100 -rotate-22 md:-rotate-15 translate-y-5 -translate-x-11 md:-translate-x-80"
+                : "opacity-0 translate-y-10"
+                }`}
             />
           </div>
         </div>
@@ -488,7 +486,7 @@ function App() {
       />
       <div className="mt-5"></div>
 
-      <p className=" font-bold text-right text-xl px-[13%]">
+      <p className=" font-bold text-right text-xl px-[13%] font-arabic">
         (10 جيجابايت في اليوم) سيتم تطبيق سياسة الاستخدام العادل علي باقات
         البيانات اللا محدودة*
       </p>
@@ -499,7 +497,7 @@ function App() {
         <div className="w-full flex lg:flex-row items-center justify-center gap-8 max-w-[2200px] ">
           {/* Left Side: Genie + Speech Bubble */}
           {/* Genie Container with Glow Effect */}
-          <div className="relative flex items-end justify-start w-full min-h-[600px] ">
+          <div className="relative flex items-center md:items-end justify-start w-full min-h-[600px] ">
             {/* Genie Glow */}
             <div className="absolute inset-0 bg-blue-500/30 blur-2xl rounded-full transform scale-110"></div>
 
@@ -507,7 +505,7 @@ function App() {
             <img
               src={lastGenie}
               alt="Magic Lantern"
-              className={` max-h-[800px] items-end animate-float-up-and-down relative z-10 mix-blend-screen object-contain  rounded-md justify-end flex transition-all duration-700 ease-in-out `}
+              className={`mt-[80%] md:mt-0 max-h-[800px] items-end animate-float-up-and-down relative z-10 mix-blend-screen object-contain  rounded-md justify-end flex transition-all duration-700 ease-in-out `}
             />
           </div>
         </div>
