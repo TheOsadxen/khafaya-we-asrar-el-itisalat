@@ -16,6 +16,22 @@
     background: #f1f1f1;
 }
 
+
+
+/* For Safari and WebKit browsers */
+.overflow-x-auto::-webkit-scrollbar {
+    height: 6px;
+    /* Adjust scrollbar height */
+    background-color: #39b0e5;
+    /* Scrollbar track color */
+}
+
+.overflow-x-auto::-webkit-scrollbar-thumb {
+    background-color: #39b0e5;
+    /* Scrollbar color */
+    border-radius: 10px;
+}
+
 .font-arabic {
     font-family: "Marhey", sans-serif;
 
