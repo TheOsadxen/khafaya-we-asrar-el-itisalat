@@ -3,7 +3,7 @@ import genie from "../assets/genie.png";
 export const Hero = () => {
   return (
     <div>
-      <div className="w-full flex flex-col lg:flex-row items-center justify-center gap-8 max-w-[2200px] mx-auto">
+      <div className="w-full flex flex-col lg:flex-row items-center justify-center gap-8 max-w-[2200px] mx-auto lg:px-[8%]">
         {/* Left Side: Genie Image (Always on Left for Large Screens) */}
         <div className="flex flex-col items-center lg:items-start relative w-full lg:w-1/2 justify-center">
           <div className="relative animate-slide-in-left flex items-center justify-center w-full h-full lg:mt-20 ml-16 ">
@@ -14,7 +14,7 @@ export const Hero = () => {
             <img
               src={genie}
               alt="Magic Lantern"
-              className="w-[450px] sm:w-[450px] md:w-[500px] lg:w-[700px] max-h-[500px] md:max-h-[900px] lg:max-h-[auto] scale-110 md:scale-130 animate-float object-cover relative z-10 mix-blend-screen rounded-md"
+              className="w-[450px] sm:w-[450px] md:w-[500px] lg:w-[auto] max-h-[500px] md:max-h-[900px] lg:max-h-[auto] scale-140  animate-float object-cover relative z-10 mix-blend-screen rounded-md"
             />
           </div>
         </div>

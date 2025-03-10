@@ -370,11 +370,11 @@ function App() {
               ref={genieRef}
               src={genie2}
               alt="Magic Lantern"
-              className={`mt-10 sm:mt-16 lg:mt-20 w-[80%] max-w-[300px] sm:max-w-[500px] lg:max-w-[800px] 
-                    relative z-10 mix-blend-screen object-contain scale-150 md:scale-110 rounded-md transition-all duration-700 ease-in-out 
+              className={`mt-10 sm:mt-16 lg:mt-20 w-[80%] max-w-[300px] sm:max-w-[500px] lg:max-w-[auto] 
+                    relative z-10 mix-blend-screen object-contain scale-150 md:scale-250 rounded-md transition-all duration-700 ease-in-out 
                     ${
                       isVisible.flexGenie
-                        ? "opacity-100 translate-x-5 -translate-y-10 md:-translate-y-1 absolute bottom-0"
+                        ? "opacity-100 translate-x-5 -translate-y-10 md:-translate-y-39 absolute bottom-0"
                         : "opacity-0 translate-y-10"
                     }`}
             />
@@ -463,9 +463,9 @@ function App() {
               ref={genie2Ref}
               src={geniee}
               alt="Magic Lantern"
-              className={` w-[350px] sm:w-[450px] md:w-[500px] lg:w-[700px] max-h-[500px] md:max-h-[900px] items-end scale-125 relative z-10 mix-blend-screen object-contain  rounded-md justify-end flex transition-all duration-700 ease-in-out ${
+              className={` w-[350px] sm:w-[450px] md:w-[500px] lg:w-[auto] max-h-[500px] md:max-h-[900px] items-end scale-125 relative z-10 mix-blend-screen object-contain  rounded-md justify-end flex transition-all duration-700 ease-in-out ${
                 isVisible.onlyNetGenie
-                  ? "opacity-100 -rotate-31 md:-rotate-20 translate-y-11 -translate-x-8 md:-translate-x-30"
+                  ? "opacity-100 -rotate-31 md:-rotate-15 translate-y-5 -translate-x-8 md:-translate-x-80"
                   : "opacity-0 translate-y-10"
               }`}
             />
