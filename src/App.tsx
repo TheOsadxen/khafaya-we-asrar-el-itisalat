@@ -358,31 +358,35 @@ function App() {
 
       <div className="mt-20"></div>
 
-      <div className="min-h-screen w-full bg-gradient-to-b from-[#00001F] to-[#2E3387] flex items-end justify-center relative overflow-hidden">
-        <div className="w-full flex lg:flex-row items-center justify-center gap-8 max-w-[2200px] ">
+      <div className="h-[350px] md:min-h-screen w-full bg-gradient-to-b from-[#00001F] to-[#2E3387] flex items-end justify-center relative overflow-hidden">
+        {/* Container Adjusts Layout on Different Screen Sizes */}
+        <div className="w-full flex flex-col lg:flex-row items-center justify-end md:justify-center gap-8 max-w-[2200px] px-4 sm:px-8">
           {/* Left Side: Genie + Speech Bubble */}
-          {/* Genie Container with Glow Effect */}
-          <div className="relative flex items-center justify-center w-full min-h-[600px]">
-            {/* Genie Glow */}
+          <div className="relative flex items-end md:items-center justify-center w-full  sm:min-h-[500px] lg:min-h-[600px]">
+            {/* Genie Glow (Blur Effect) */}
             <div className="absolute inset-0 bg-blue-500/30 blur-2xl rounded-full transform scale-110"></div>
 
-            {/* Genie Image */}
+            {/* Genie Image (Scales Dynamically) */}
             <img
               ref={genieRef}
               src={genie2}
               alt="Magic Lantern"
-              className={`mt-20 w-full max-h-[800px]  relative z-10 mix-blend-screen object-contain  rounded-md justify-center self-center flex transition-all duration-700 ease-in-out ${
-                isVisible.flexGenie
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-10"
-              }`}
+              className={`mt-10 sm:mt-16 lg:mt-20 w-[80%] max-w-[300px] sm:max-w-[500px] lg:max-w-[800px] 
+                    relative z-10 mix-blend-screen object-contain scale-150 md:scale-110 rounded-md transition-all duration-700 ease-in-out 
+                    ${
+                      isVisible.flexGenie
+                        ? "opacity-100 translate-x-5 -translate-y-10 md:-translate-y-1 absolute bottom-0"
+                        : "opacity-0 translate-y-10"
+                    }`}
             />
           </div>
         </div>
+
+        {/* Floating Blur Effects */}
         <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden">
-          <div className="absolute top-[10%] left-[5%] w-24 h-24 bg-white/5 rounded-full blur-xl"></div>
-          <div className="absolute bottom-[20%] right-[10%] w-32 h-32 bg-white/5 rounded-full blur-xl"></div>
-          <div className="absolute top-[40%] right-[20%] w-16 h-16 bg-white/5 rounded-full blur-xl"></div>
+          <div className="absolute top-[10%] left-[5%] w-12 h-12 sm:w-24 sm:h-24 bg-white/5 rounded-full blur-xl"></div>
+          <div className="absolute bottom-[20%] right-[10%] w-16 h-16 sm:w-32 sm:h-32 bg-white/5 rounded-full blur-xl"></div>
+          <div className="absolute top-[40%] right-[20%] w-8 h-8 sm:w-16 sm:h-16 bg-white/5 rounded-full blur-xl"></div>
         </div>
       </div>
 
@@ -398,9 +402,9 @@ function App() {
           {flags.map((flag) => (
             <img
               key={flag}
-              src={`https://flagcdn.com/w80/${flag}.png`}
+              src={`https://flagcdn.com/w160/${flag}.png`}
               alt={flag}
-              className="w-16 h-12 border rounded object-fit"
+              className="w-22 h-14 border rounded object-fit"
             />
           ))}
         </div>
@@ -447,7 +451,7 @@ function App() {
 
       <div className="mt-20"></div>
 
-      <div className="min-h-screen w-full bg-gradient-to-b from-[#00001F] to-[#2E3387] flex items-end justify-end relative overflow-hidden">
+      <div className="h-[350px] md:min-h-screen w-full bg-gradient-to-b from-[#00001F] to-[#2E3387] flex items-end justify-end relative overflow-hidden">
         <div className="w-full flex lg:flex-row items-center justify-center gap-8 max-w-[2200px] ">
           {/* Left Side: Genie + Speech Bubble */}
           {/* Genie Container with Glow Effect */}
@@ -460,9 +464,9 @@ function App() {
               ref={genie2Ref}
               src={geniee}
               alt="Magic Lantern"
-              className={`   max-h-[800px] items-end scale-125 relative z-10 mix-blend-screen object-contain  rounded-md justify-end flex transition-all duration-700 ease-in-out ${
+              className={` w-[350px] sm:w-[450px] md:w-[500px] lg:w-[700px] max-h-[500px] md:max-h-[900px] items-end scale-125 relative z-10 mix-blend-screen object-contain  rounded-md justify-end flex transition-all duration-700 ease-in-out ${
                 isVisible.onlyNetGenie
-                  ? "opacity-100 -rotate-20 translate-y-10 -translate-x-30"
+                  ? "opacity-100 -rotate-31 md:-rotate-20 translate-y-11 -translate-x-8 md:-translate-x-30"
                   : "opacity-0 translate-y-10"
               }`}
             />
@@ -492,7 +496,7 @@ function App() {
 
       <div className="mt-20"></div>
 
-      <div className="min-h-screen w-full bg-gradient-to-b from-[#00001F] to-[#2E3387] flex items-end justify-end relative overflow-hidden">
+      <div className="h-[350px]  md:min-h-screen w-full bg-gradient-to-b from-[#00001F] to-[#2E3387] flex items-end justify-end relative overflow-hidden">
         <div className="w-full flex lg:flex-row items-center justify-center gap-8 max-w-[2200px] ">
           {/* Left Side: Genie + Speech Bubble */}
           {/* Genie Container with Glow Effect */}

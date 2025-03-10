@@ -6,7 +6,7 @@ export const Hero = () => {
       <div className="w-full flex flex-col lg:flex-row items-center justify-center gap-8 max-w-[2200px] mx-auto">
         {/* Left Side: Genie Image (Always on Left for Large Screens) */}
         <div className="flex flex-col items-center lg:items-start relative w-full lg:w-1/2 justify-center">
-          <div className="relative animate-slide-in-left flex items-center justify-center w-full h-full lg:mt-20 ">
+          <div className="relative animate-slide-in-left flex items-center justify-center w-full h-full lg:mt-20 ml-16 ">
             {/* Genie Glow */}
             <div className="absolute inset-0 bg-blue-500/30 blur-2xl rounded-full transform scale-110"></div>
 
@@ -14,7 +14,7 @@ export const Hero = () => {
             <img
               src={genie}
               alt="Magic Lantern"
-              className="w-[300px] sm:w-[450px] md:w-[500px] lg:w-[600px] max-h-[500px] md:max-h-[900px] animate-float object-cover relative z-10 mix-blend-screen rounded-md"
+              className="w-[350px] sm:w-[450px] md:w-[500px] lg:w-[700px] max-h-[500px] md:max-h-[900px] scale-110 md:scale-150 animate-float object-cover relative z-10 mix-blend-screen rounded-md"
             />
           </div>
         </div>
