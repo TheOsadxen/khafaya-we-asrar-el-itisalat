@@ -488,7 +488,7 @@ function App() {
       />
       <div className="mt-5"></div>
 
-      <p className="font-arabic font-bold text-right text-xl px-[13%]">
+      <p className=" font-bold text-right text-xl px-[13%]">
         (10 جيجابايت في اليوم) سيتم تطبيق سياسة الاستخدام العادل علي باقات
         البيانات اللا محدودة*
       </p>
