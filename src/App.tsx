@@ -2,7 +2,6 @@ import { createColumnHelper } from "@tanstack/table-core";
 import "./App.css";
 import { Footer } from "./components/Footer";
 import { Hero } from "./components/Hero";
-import { Navbar } from "./components/Navbar";
 import { Table } from "./components/UI/Table";
 import genie2 from "./assets/genie2.png";
 import geniee from "./assets/geniee.png";
@@ -335,7 +334,7 @@ function App() {
 
   return (
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
       <div className="min-h-screen w-full bg-gradient-to-b from-[#00001F] to-[#2E3387] flex items-center justify-center relative overflow-hidden">
         <Hero />
       </div>

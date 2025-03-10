@@ -14,7 +14,7 @@ export const Hero = () => {
             <img
               src={genie}
               alt="Magic Lantern"
-              className="w-[350px] sm:w-[450px] md:w-[500px] lg:w-[700px] max-h-[500px] md:max-h-[900px] scale-110 md:scale-150 animate-float object-cover relative z-10 mix-blend-screen rounded-md"
+              className="w-[450px] sm:w-[450px] md:w-[500px] lg:w-[700px] max-h-[500px] md:max-h-[900px] lg:max-h-[auto] scale-110 md:scale-130 animate-float object-cover relative z-10 mix-blend-screen rounded-md"
             />
           </div>
         </div>
