@@ -21,7 +21,7 @@ export const Hero = () => {
 
         {/* Right Side: Text Content (Always on Right for Large Screens) */}
         <div className="w-full lg:w-1/2 text-center lg:text-right space-y-3 p-6 flex flex-col items-center lg:items-end animate-slide-in-right mt-12 md:mt-0">
-          <h1 className="text-white text-3xl sm:text-4xl lg:text-6xl font-bold leading-tight font-arabic">
+          <h1 className="text-white text-3xl sm:text-4xl lg:text-6xl font-bold  font-arabic leading-snug">
             مرحبًا بك في عالم{" "}
             <span className="text-[#36BCE7]">خفايا واسرار الاتصالات</span>
           </h1>
