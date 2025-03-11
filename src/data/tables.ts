@@ -633,3 +633,42 @@ export const flags = [
   "my",
   "lb",
 ];
+
+export const flexSpecificData = [
+  {
+    plan: "فليكس اليومية",
+    flex_minutes: 100,
+    social_media: "-",
+    extra_data: "2 جيجابايت",
+    price: 25,
+    validity: "يوم",
+    activation_code: "*666*660#",
+  },
+  {
+    plan: "فليكس 75",
+    flex_minutes: 400,
+    social_media: "10 جيجابايت",
+    extra_data: "10 جيجابايت",
+    price: 75,
+    validity: "28 يوم",
+    activation_code: "*666*70#",
+  },
+  {
+    plan: "فليكس 100",
+    flex_minutes: 900,
+    social_media: "10 جيجابايت",
+    extra_data: "30 جيجابايت",
+    price: 100,
+    validity: "28 يوم",
+    activation_code: "*666*100#",
+  },
+  {
+    plan: "فليكس 300",
+    flex_minutes: 1600,
+    social_media: "سوشال ميديا لا محدودة",
+    extra_data: "100 جيجابايت",
+    price: 300,
+    validity: "90 يوم",
+    activation_code: "*666*90#",
+  },
+];

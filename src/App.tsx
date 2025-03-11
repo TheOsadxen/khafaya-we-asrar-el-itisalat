@@ -12,6 +12,7 @@ import {
   allNetworksData,
   flags,
   flexPackagesData,
+  flexSpecificData,
   internationalPackagesData,
   internationalPackagesData2,
   libaraNetworkData,
@@ -357,6 +358,43 @@ function App() {
 
       <div className="mt-20"></div>
 
+      <div className="h-[350px] md:min-h-screen w-full bg-gradient-to-b from-[#00001F] to-[#2E3387] flex items-end justify-end relative overflow-hidden">
+        <div className="w-full flex lg:flex-row items-center justify-center gap-8 max-w-[2200px] ">
+          {/* Left Side: Genie + Speech Bubble */}
+          {/* Genie Container with Glow Effect */}
+          <div className="relative flex items-end justify-end w-full min-h-[600px] ">
+            {/* Genie Glow */}
+            <div className="absolute inset-0 bg-blue-500/30 blur-2xl rounded-full transform scale-110"></div>
+
+            {/* Genie Image */}
+            <img
+              ref={genie2Ref}
+              src={geniee}
+              alt="Magic Lantern"
+              className={` w-[350px] sm:w-[450px] md:w-[500px] lg:w-[auto] max-h-[500px] md:max-h-[900px] items-end scale-125 relative z-10 mix-blend-screen object-contain  rounded-md justify-end flex transition-all duration-700 ease-in-out ${isVisible.onlyNetGenie
+                ? "opacity-100 -rotate-22 md:-rotate-15 translate-y-5 -translate-x-11 md:-translate-x-80"
+                : "opacity-0 translate-y-10"
+                }`}
+            />
+          </div>
+        </div>
+
+        <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden">
+          <div className="absolute top-[10%] left-[5%] w-24 h-24 bg-white/5 rounded-full blur-xl"></div>
+          <div className="absolute bottom-[20%] right-[10%] w-32 h-32 bg-white/5 rounded-full blur-xl"></div>
+          <div className="absolute top-[40%] right-[20%] w-16 h-16 bg-white/5 rounded-full blur-xl"></div>
+        </div>
+      </div>
+
+      <div className="mt-20"></div>
+
+      <Table
+        data={onlyInterntData}
+        columns={onlyInternetColumns}
+        title={<p>باقات البيانات</p>}
+      />
+      <div className="mt-20"></div>
+
       <div className="h-[350px] md:min-h-screen w-full bg-gradient-to-b from-[#00001F] to-[#2E3387] flex items-end justify-center relative overflow-hidden">
         {/* Container Adjusts Layout on Different Screen Sizes */}
         <div className="w-full flex flex-col lg:flex-row items-center justify-end md:justify-center gap-8 max-w-[2200px] px-4 sm:px-8">
@@ -373,7 +411,7 @@ function App() {
               className={`mt-10 sm:mt-16 lg:mt-20 w-[80%] max-w-[300px] sm:max-w-[500px] lg:max-w-[auto] 
                     relative z-10 mix-blend-screen object-contain scale-150 md:scale-250 rounded-md transition-all duration-700 ease-in-out 
                     ${isVisible.flexGenie
-                  ? "opacity-100 translate-x-5 -translate-y-10 md:-translate-y-39 absolute bottom-0"
+                  ? "opacity-100 translate-x-5 -translate-y-10 md:-translate-y-33 absolute bottom-0"
                   : "opacity-0 translate-y-10"
                 }`}
             />
@@ -445,51 +483,23 @@ function App() {
           data={yallaPackageData}
           title={<p>باقات يلا</p>}
         />
+        <div className="mt-5"></div>
+
+        <p className=" font-bold text-right text-xl px-[13%] font-arabic">
+          (10 جيجابايت في اليوم) سيتم تطبيق سياسة الاستخدام العادل علي باقات
+          البيانات اللا محدودة*
+        </p>
+
+        <hr className="h-px my-8 bg-[#36BCE7] border-0 " />
+        <Table
+          columns={flexPackagesColumns}
+          data={flexSpecificData}
+          title={<p>باقات ليبارا  <span className="text-red-600">فليكس</span> (تضمن مكالمات محلية ودولية لوجهات معينة)</p>}
+        />
+
       </div>
 
-      <div className="mt-20"></div>
 
-      <div className="h-[350px] md:min-h-screen w-full bg-gradient-to-b from-[#00001F] to-[#2E3387] flex items-end justify-end relative overflow-hidden">
-        <div className="w-full flex lg:flex-row items-center justify-center gap-8 max-w-[2200px] ">
-          {/* Left Side: Genie + Speech Bubble */}
-          {/* Genie Container with Glow Effect */}
-          <div className="relative flex items-end justify-end w-full min-h-[600px] ">
-            {/* Genie Glow */}
-            <div className="absolute inset-0 bg-blue-500/30 blur-2xl rounded-full transform scale-110"></div>
-
-            {/* Genie Image */}
-            <img
-              ref={genie2Ref}
-              src={geniee}
-              alt="Magic Lantern"
-              className={` w-[350px] sm:w-[450px] md:w-[500px] lg:w-[auto] max-h-[500px] md:max-h-[900px] items-end scale-125 relative z-10 mix-blend-screen object-contain  rounded-md justify-end flex transition-all duration-700 ease-in-out ${isVisible.onlyNetGenie
-                ? "opacity-100 -rotate-22 md:-rotate-15 translate-y-5 -translate-x-11 md:-translate-x-80"
-                : "opacity-0 translate-y-10"
-                }`}
-            />
-          </div>
-        </div>
-
-        <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden">
-          <div className="absolute top-[10%] left-[5%] w-24 h-24 bg-white/5 rounded-full blur-xl"></div>
-          <div className="absolute bottom-[20%] right-[10%] w-32 h-32 bg-white/5 rounded-full blur-xl"></div>
-          <div className="absolute top-[40%] right-[20%] w-16 h-16 bg-white/5 rounded-full blur-xl"></div>
-        </div>
-      </div>
-
-      <div className="mt-20"></div>
-
-      <Table
-        data={onlyInterntData}
-        columns={onlyInternetColumns}
-        title={<p>باقات البيانات</p>}
-      />
-      <div className="mt-5"></div>
-
-      <p className=" font-bold text-right text-xl px-[13%] font-arabic">
-        (10 جيجابايت في اليوم) سيتم تطبيق سياسة الاستخدام العادل علي باقات
-        البيانات اللا محدودة*
-      </p>
 
       <div className="mt-20"></div>
 

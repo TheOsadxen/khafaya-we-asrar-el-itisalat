@@ -26,11 +26,11 @@ export const Hero = () => {
             <span className="text-[#36BCE7]">خفايا واسرار الاتصالات</span>
           </h1>
           <p className="text-white text-base sm:text-lg lg:text-xl opacity-80">
-            اكتشف ازاي مارد الاتصالات ممكن يجيب لك أفضل العروض والخدمات بسهولة
+            مارد الاتصالات ممكن يجيب لك أفضل العروض والخدمات بسهولة
             وسرعة
           </p>
           <p className="text-white text-base sm:text-lg lg:text-xl opacity-80 mb-6">
-            شوف دلوقتي باقتنا المختلفه لو مسافر السعودية
+            لو مسافر السعودية
           </p>
           <button
             onClick={() =>
