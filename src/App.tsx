@@ -5,6 +5,8 @@ import { Hero } from "./components/Hero";
 import { Table } from "./components/UI/Table";
 import genie2 from "./assets/genie2.png";
 import geniee from "./assets/geniee.png";
+import genie4 from "./assets/genie4.png";
+
 import lastGenie from "./assets/lastGenie.png";
 
 import { useEffect, useRef, useState } from "react";
@@ -25,17 +27,20 @@ function App() {
 
   const genieRef = useRef(null);
   const genie2Ref = useRef(null);
+  const yallaGenieRef = useRef(null);
+
 
   const [isVisible, setIsVisible] = useState({
     flexGenie: false,
     onlyNetGenie: false,
+    yallaGenie: false
   });
 
   useEffect(() => {
     const flexGenieObserver = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsVisible({ flexGenie: true, onlyNetGenie: false }); // Set visibility to true only when in view
+          setIsVisible({ flexGenie: true, onlyNetGenie: false, yallaGenie: false }); // Set visibility to true only when in view
         }
       },
       { threshold: 0.3 }
@@ -48,7 +53,7 @@ function App() {
     const onlyNetGenieObserver = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsVisible({ flexGenie: false, onlyNetGenie: true }); // Set visibility to true only when in view
+          setIsVisible({ flexGenie: false, onlyNetGenie: true, yallaGenie: false }); // Set visibility to true only when in view
         }
       },
       { threshold: 0.3 }
@@ -58,9 +63,24 @@ function App() {
       onlyNetGenieObserver.observe(genie2Ref.current);
     }
 
+    const yallaGenieObserver = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible({ flexGenie: false, onlyNetGenie: false, yallaGenie: true }); // Set visibility to true only when in view
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    if (yallaGenieRef.current) {
+      yallaGenieObserver.observe(yallaGenieRef.current);
+    }
+
     return () => {
       if (genieRef.current) flexGenieObserver.unobserve(genieRef.current);
       if (genie2Ref.current) onlyNetGenieObserver.unobserve(genie2Ref.current);
+      if (yallaGenieRef.current) yallaGenieObserver.unobserve(yallaGenieRef.current);
+
     };
   }, []);
 
@@ -394,6 +414,45 @@ function App() {
         title={<p>باقات البيانات</p>}
       />
       <div className="mt-20"></div>
+
+      <div className="h-[350px] md:min-h-screen w-full bg-gradient-to-b from-[#00001F] to-[#2E3387] flex items-end justify-center relative overflow-hidden">
+        {/* Container Adjusts Layout on Different Screen Sizes */}
+        <div className="w-full flex flex-col lg:flex-row items-center justify-end md:justify-center gap-8 max-w-[2200px] px-4 sm:px-8">
+          {/* Left Side: Genie + Speech Bubble */}
+          <div className="relative flex items-end md:items-center justify-center w-full  sm:min-h-[500px] lg:min-h-[600px]">
+            {/* Genie Glow (Blur Effect) */}
+            <div className="absolute inset-0 bg-blue-500/30 blur-2xl rounded-full transform scale-110"></div>
+
+            {/* Genie Image (Scales Dynamically) */}
+            <img
+              ref={yallaGenieRef}
+              src={genie4}
+              alt="Magic Lantern"
+              className={`mt-10 sm:mt-16 lg:mt-20 w-[80%] max-w-[300px] sm:max-w-[500px] lg:max-w-[auto] 
+                    relative z-10 object-contain scale-150 md:scale-250 rounded-md transition-all duration-700 ease-in-out 
+                    ${isVisible.yallaGenie
+                  ? "opacity-100 -translate-x-1 md:translate-x-5 -translate-y-10 md:-translate-y-28"
+                  : "opacity-0 translate-y-10"
+                }`}
+            />
+          </div>
+        </div>
+
+        {/* Floating Blur Effects */}
+        <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden">
+          <div className="absolute top-[10%] left-[5%] w-12 h-12 sm:w-24 sm:h-24 bg-white/5 rounded-full blur-xl"></div>
+          <div className="absolute bottom-[20%] right-[10%] w-16 h-16 sm:w-32 sm:h-32 bg-white/5 rounded-full blur-xl"></div>
+          <div className="absolute top-[40%] right-[20%] w-8 h-8 sm:w-16 sm:h-16 bg-white/5 rounded-full blur-xl"></div>
+        </div>
+      </div>
+
+      <div className="mt-20"></div>
+
+      <Table
+        columns={yallaPackageColumns}
+        data={yallaPackageData}
+        title={<p>باقات يلا</p>}
+      />
 
       <div className="h-[350px] md:min-h-screen w-full bg-gradient-to-b from-[#00001F] to-[#2E3387] flex items-end justify-center relative overflow-hidden">
         {/* Container Adjusts Layout on Different Screen Sizes */}
