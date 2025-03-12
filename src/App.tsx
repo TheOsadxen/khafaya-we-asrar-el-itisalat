@@ -489,7 +489,7 @@ function App() {
 
       <p className="font-arabic font-bold text-right text-xl px-[13%]">
         جميع اسعار الباقات اعلاه <span className="underline">غير شامله</span>{" "}
-        القيمة المضافة*
+        القيمة المضافة
       </p>
 
       <div className="mt-20"></div>
