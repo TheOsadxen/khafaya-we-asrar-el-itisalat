@@ -47,6 +47,10 @@ img {
     text-align: right;
 }
 
+.left-to-right {
+    direction: ltr;
+}
+
 
 .speech-bubble {
     position: relative;

@@ -108,7 +108,7 @@ function App() {
     columnHelper.accessor("activationCode", {
       header: () => <span className="font-arabic font-bold">رمز التفعيل</span>,
       cell: (info) => (
-        <span className="font-arabic font-mono">{info.getValue()}</span>
+        <span className="font-arabic font-mono left-to-right" dir="ltr">{info.getValue()}</span>
       ),
     }),
   ];
@@ -150,7 +150,7 @@ function App() {
     }),
     columnHelper.accessor("activationCode", {
       cell: (info) => <span className="font-arabic "> {info.getValue()}</span>,
-      header: () => <span className="font-arabic font-bold">رمز التفعيل</span>,
+      header: () => <span className="font-arabic font-bold" dir="ltr">رمز التفعيل</span>,
     }),
   ];
 
@@ -196,7 +196,7 @@ function App() {
     }),
     columnHelper.accessor("activationCode", {
       header: () => <span className="font-arabic font-bold">رمز التفعيل</span>,
-      cell: (info) => <span className="font-arabic">{info.getValue()}</span>,
+      cell: (info) => <span className="font-arabic" dir="ltr">{info.getValue()}</span>,
     }),
   ];
 
@@ -241,7 +241,7 @@ function App() {
 
     columnHelper.accessor("activation_code", {
       header: () => <span className="font-arabic font-bold">رمز التفعيل</span>,
-      cell: (info) => <span className="font-arabic">{info.getValue()}</span>,
+      cell: (info) => <span className="font-arabic" dir="ltr">{info.getValue()}</span>,
     }),
   ];
 
@@ -280,7 +280,7 @@ function App() {
     }),
     columnHelper.accessor("activationCode", {
       header: () => <span className="font-arabic font-bold">رمز التفعيل</span>,
-      cell: (info) => <span className="font-arabic">{info.getValue()}</span>,
+      cell: (info) => <span className="font-arabic" dir="ltr">{info.getValue()}</span>,
     }),
   ];
 
@@ -329,7 +329,7 @@ function App() {
 
     columnHelper.accessor("activationCode", {
       header: () => <span className="font-arabic font-bold">رمز التفعيل</span>,
-      cell: (info) => <span className="font-arabic">{info.getValue()}</span>,
+      cell: (info) => <span className="font-arabic" dir="ltr">{info.getValue()}</span>,
     }),
   ];
 
@@ -371,7 +371,7 @@ function App() {
               ref={genie2Ref}
               src={geniee}
               alt="Magic Lantern"
-              className={` w-[350px] sm:w-[450px] md:w-[500px] lg:w-[auto] max-h-[500px] md:max-h-[900px] items-end scale-125 relative z-10 mix-blend-screen object-contain  rounded-md justify-end flex transition-all duration-700 ease-in-out ${isVisible.onlyNetGenie
+              className={` w-[350px] sm:w-[450px] md:w-[500px] lg:w-[auto] max-h-[500px] md:max-h-[900px] items-end scale-125 relative z-10  object-contain  rounded-md justify-end flex transition-all duration-700 ease-in-out ${isVisible.onlyNetGenie
                 ? "opacity-100 -rotate-22 md:-rotate-15 translate-y-5 -translate-x-11 md:-translate-x-80"
                 : "opacity-0 translate-y-10"
                 }`}
@@ -409,7 +409,7 @@ function App() {
               src={genie2}
               alt="Magic Lantern"
               className={`mt-10 sm:mt-16 lg:mt-20 w-[80%] max-w-[300px] sm:max-w-[500px] lg:max-w-[auto] 
-                    relative z-10 mix-blend-screen object-contain scale-150 md:scale-250 rounded-md transition-all duration-700 ease-in-out 
+                    relative z-10 object-contain scale-150 md:scale-250 rounded-md transition-all duration-700 ease-in-out 
                     ${isVisible.flexGenie
                   ? "opacity-100 translate-x-5 -translate-y-10 md:-translate-y-33 absolute bottom-0"
                   : "opacity-0 translate-y-10"
@@ -515,7 +515,7 @@ function App() {
             <img
               src={lastGenie}
               alt="Magic Lantern"
-              className={`mt-[80%] md:mt-0 max-h-[800px] items-end animate-float-up-and-down relative z-10 mix-blend-screen object-contain  rounded-md justify-end flex transition-all duration-700 ease-in-out `}
+              className={`mt-[80%] md:mt-0 max-h-[800px] items-end animate-float-up-and-down relative z-10  object-contain  rounded-md justify-end flex transition-all duration-700 ease-in-out `}
             />
           </div>
         </div>
