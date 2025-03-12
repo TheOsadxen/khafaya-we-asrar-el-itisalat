@@ -43,7 +43,7 @@ export const Table = ({
       {/* Table Container */}
       <div
         ref={tableContainerRef}
-        className="overflow-x-auto lg:px-2 w-3/4 flex justify-center mx-auto flex-col"
+        className="overflow-x-auto lg:px-2 w-full md:w-3/4 flex justify-center mx-auto flex-col"
         dir="rtl"
       >
         <table className="min-w-full bg-white border-collapse">
