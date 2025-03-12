@@ -40,7 +40,7 @@ function App() {
     const flexGenieObserver = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsVisible({ flexGenie: true, onlyNetGenie: false, yallaGenie: false }); // Set visibility to true only when in view
+          setIsVisible((prev) => { return { ...prev, flexGenie: true } }); // Set visibility to true only when in view
         }
       },
       { threshold: 0.3 }
@@ -53,7 +53,7 @@ function App() {
     const onlyNetGenieObserver = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsVisible({ flexGenie: false, onlyNetGenie: true, yallaGenie: false }); // Set visibility to true only when in view
+          setIsVisible((prev) => { return { ...prev, onlyNetGenie: true } }); // Set visibility to true only when in view
         }
       },
       { threshold: 0.3 }
@@ -66,7 +66,7 @@ function App() {
     const yallaGenieObserver = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsVisible({ flexGenie: false, onlyNetGenie: false, yallaGenie: true }); // Set visibility to true only when in view
+          setIsVisible((prev) => { return { ...prev, yallaGenie: true } }); // Set visibility to true only when in view
         }
       },
       { threshold: 0.3 }
@@ -86,118 +86,118 @@ function App() {
 
   const internationalPackagesColumns = [
     columnHelper.accessor("country", {
-      header: () => <span className="font-arabic font-bold">الدولة</span>,
-      cell: (info) => <span className="font-arabic">{info.getValue()}</span>,
+      header: () => <span className="font-arabic font-bold text-md lg:text-lg">الدولة</span>,
+      cell: (info) => <span className="font-arabic text-md lg:text-lg">{info.getValue()}</span>,
     }),
     columnHelper.accessor("packageName", {
-      header: () => <span className="font-arabic font-bold">اسم الباقة</span>,
-      cell: (info) => <span className="font-arabic">{info.getValue()}</span>,
+      header: () => <span className="font-arabic font-bold text-md lg:text-lg">اسم الباقة</span>,
+      cell: (info) => <span className="font-arabic text-md lg:text-lg">{info.getValue()}</span>,
     }),
     columnHelper.accessor("internationalMinutes", {
       header: () => (
-        <span className="font-arabic font-bold">الدقائق الدولية</span>
+        <span className="font-arabic font-bold text-md lg:text-lg">الدقائق الدولية</span>
       ),
-      cell: (info) => <span className="font-arabic">{info.getValue()}</span>,
+      cell: (info) => <span className="font-arabic text-md lg:text-lg">{info.getValue()}</span>,
     }),
     columnHelper.accessor("localMinutes", {
       header: () => (
-        <span className="font-arabic font-bold">
+        <span className="font-arabic font-bold text-md lg:text-lg">
           الدقائق المحلية والدولية (فليكس)
         </span>
       ),
-      cell: (info) => <span className="font-arabic">{info.getValue()}</span>,
+      cell: (info) => <span className="font-arabic text-md lg:text-lg">{info.getValue()}</span>,
     }),
     columnHelper.accessor("data", {
-      header: () => <span className="font-arabic font-bold">البيانات</span>,
+      header: () => <span className="font-arabic font-bold text-md lg:text-lg">البيانات</span>,
       cell: (info) => (
-        <div className="font-arabic text-blue-600 font-bold">
+        <div className="font-arabic text-blue-600 font-bold text-md lg:text-lg">
           {info.getValue()}
         </div>
       ),
     }),
     columnHelper.accessor("price", {
       header: () => (
-        <span className="font-arabic font-bold">سعر الباقة /ريال</span>
+        <span className="font-arabic font-bold text-md lg:text-lg">سعر الباقة /ريال</span>
       ),
       cell: (info) => <span className="font-arabic">{info.getValue()}</span>,
     }),
     columnHelper.accessor("validity", {
-      header: () => <span className="font-arabic font-bold">الصلاحية</span>,
-      cell: (info) => <span className="font-arabic">{info.getValue()}</span>,
+      header: () => <span className="font-arabic font-bold text-md lg:text-lg">الصلاحية</span>,
+      cell: (info) => <span className="font-arabic text-md lg:text-lg">{info.getValue()}</span>,
     }),
     columnHelper.accessor("activationCode", {
-      header: () => <span className="font-arabic font-bold">رمز التفعيل</span>,
+      header: () => <span className="font-arabic font-bold text-md lg:text-lg">رمز التفعيل</span>,
       cell: (info) => (
-        <span className="font-arabic font-mono left-to-right" dir="ltr">{info.getValue()}</span>
+        <span className="font-arabic font-mono left-to-right text-md lg:text-lg" dir="ltr">{info.getValue()}</span>
       ),
     }),
   ];
 
   const yallaPackageColumns = [
     columnHelper.accessor("package", {
-      cell: (info) => <span className="font-arabic "> {info.getValue()}</span>,
+      cell: (info) => <span className="font-arabic text-md lg:text-lg"> {info.getValue()}</span>,
       header: () => <span className="font-arabic font-bold">الباقــة</span>,
     }),
     columnHelper.accessor("duration", {
-      cell: (info) => <span className="font-arabic "> {info.getValue()}</span>,
+      cell: (info) => <span className="font-arabic text-md lg:text-lg"> {info.getValue()}</span>,
       header: () => (
-        <span className="font-arabic font-bold">
+        <span className="font-arabic font-bold text-md lg:text-lg" >
           دقائق محلية (داخل وخارج الشبكة)
         </span>
       ),
     }),
     columnHelper.accessor("minutes", {
-      cell: (info) => <span className="font-arabic "> {info.getValue()}</span>,
-      header: () => <span className="font-arabic font-bold">بيانات</span>,
+      cell: (info) => <span className="font-arabic text-md lg:text-lg"> {info.getValue()}</span>,
+      header: () => <span className="font-arabic font-bold text-md lg:text-lg">بيانات</span>,
     }),
     columnHelper.accessor("data", {
-      cell: (info) => <span className="font-arabic "> {info.getValue()}</span>,
-      header: () => <span className="font-arabic font-bold">سوشيال ميديا</span>,
+      cell: (info) => <span className="font-arabic text-md lg:text-lg"> {info.getValue()}</span>,
+      header: () => <span className="font-arabic font-bold text-md lg:text-lg">سوشيال ميديا</span>,
     }),
     columnHelper.accessor("socialData", {
-      cell: (info) => <span className="font-arabic "> {info.getValue()}</span>,
-      header: () => <span className="font-arabic font-bold">عرض ترويجي</span>,
+      cell: (info) => <span className="font-arabic text-md lg:text-lg"> {info.getValue()}</span>,
+      header: () => <span className="font-arabic font-bold text-md lg:text-lg">عرض ترويجي</span>,
     }),
     columnHelper.accessor("price", {
-      cell: (info) => `${info.getValue()}`,
+      cell: (info) => <span className="font-arabic text-md lg:text-lg"> {info.getValue()}</span>,
       header: () => (
-        <span className="font-arabic font-bold">سعر الباقة/ ريال</span>
+        <span className="font-arabic font-bold text-md lg:text-lg">سعر الباقة/ ريال</span>
       ),
     }),
     columnHelper.accessor("validity", {
-      cell: (info) => <span className="font-arabic "> {info.getValue()}</span>,
-      header: () => <span className="font-arabic font-bold">الصلاحية</span>,
+      cell: (info) => <span className="font-arabic text-md lg:text-lg"> {info.getValue()}</span>,
+      header: () => <span className="font-arabic font-bold text-md lg:text-lg">الصلاحية</span>,
     }),
     columnHelper.accessor("activationCode", {
-      cell: (info) => <span className="font-arabic "> {info.getValue()}</span>,
-      header: () => <span className="font-arabic font-bold" dir="ltr">رمز التفعيل</span>,
+      cell: (info) => <span className="font-arabic text-md lg:text-lg" dir="ltr"> {info.getValue()}</span>,
+      header: () => <span className="font-arabic font-bold text-md lg:text-lg" >رمز التفعيل</span>,
     }),
   ];
 
   /*----------------------------------------------*/
   const internationalPackagesColumns2 = [
     columnHelper.accessor("country", {
-      header: () => <span className="font-arabic font-bold">الدولة</span>,
-      cell: (info) => <span className="font-arabic">{info.getValue()}</span>,
+      header: () => <span className="font-arabic font-bold text-md lg:text-lg">الدولة</span>,
+      cell: (info) => <span className="font-arabic text-md lg:text-lg">{info.getValue()}</span>,
     }),
     columnHelper.accessor("packageName", {
-      header: () => <span className="font-arabic font-bold">اسم الباقة</span>,
-      cell: (info) => <span className="font-arabic">{info.getValue()}</span>,
+      header: () => <span className="font-arabic font-bold text-md lg:text-lg">اسم الباقة</span>,
+      cell: (info) => <span className="font-arabic text-md lg:text-lg">{info.getValue()}</span>,
     }),
     columnHelper.accessor("internationalMinutes", {
       header: () => (
-        <span className="font-arabic font-bold">الدقائق الدولية</span>
+        <span className="font-arabic font-bold text-md lg:text-lg">الدقائق الدولية</span>
       ),
-      cell: (info) => <span className="font-arabic">{info.getValue()}</span>,
+      cell: (info) => <span className="font-arabic text-md lg:text-lg">{info.getValue()}</span>,
     }),
     columnHelper.accessor("localMinutes", {
       header: () => (
-        <span className="font-arabic font-bold">الدقائق المحلية</span>
+        <span className="font-arabic font-bold text-md lg:text-lg">الدقائق المحلية</span>
       ),
-      cell: (info) => <span className="font-arabic">{info.getValue()}</span>,
+      cell: (info) => <span className="font-arabic text-md lg:text-lg">{info.getValue()}</span>,
     }),
     columnHelper.accessor("data", {
-      header: () => <span className="font-arabic font-bold">البيانات</span>,
+      header: () => <span className="font-arabic font-bold text-md lg:text-lg">البيانات</span>,
       cell: (info) => (
         <div className="font-arabic text-blue-600 font-bold">
           {info.getValue()}
@@ -206,24 +206,24 @@ function App() {
     }),
     columnHelper.accessor("price", {
       header: () => (
-        <span className="font-arabic font-bold">سعر الباقة /ريال</span>
+        <span className="font-arabic font-bold text-md lg:text-lg">سعر الباقة /ريال</span>
       ),
-      cell: (info) => <span className="font-arabic">{info.getValue()}</span>,
+      cell: (info) => <span className="font-arabic text-md lg:text-lg">{info.getValue()}</span>,
     }),
     columnHelper.accessor("validity", {
-      header: () => <span className="font-arabic font-bold">الصلاحية</span>,
-      cell: (info) => <span className="font-arabic">{info.getValue()}</span>,
+      header: () => <span className="font-arabic font-bold text-md lg:text-lg">الصلاحية</span>,
+      cell: (info) => <span className="font-arabic text-md lg:text-lg">{info.getValue()}</span>,
     }),
     columnHelper.accessor("activationCode", {
-      header: () => <span className="font-arabic font-bold">رمز التفعيل</span>,
-      cell: (info) => <span className="font-arabic" dir="ltr">{info.getValue()}</span>,
+      header: () => <span className="font-arabic font-bold text-md lg:text-lg">رمز التفعيل</span>,
+      cell: (info) => <span className="font-arabic text-md lg:text-lg" dir="ltr">{info.getValue()}</span>,
     }),
   ];
 
   const flexPackagesColumns = [
     columnHelper.accessor("plan", {
       header: () => <span className="font-arabic font-bold">الباقة</span>,
-      cell: (info) => <span className="font-arabic">{info.getValue()}</span>,
+      cell: (info) => <span className="font-arabic text-md lg:text-lg">{info.getValue()}</span>,
     }),
 
     columnHelper.accessor("flex_minutes", {
@@ -232,36 +232,36 @@ function App() {
           الدقائق المحلية والدولية (فليكس)
         </span>
       ),
-      cell: (info) => <span className="font-arabic">{info.getValue()}</span>,
+      cell: (info) => <span className="font-arabic text-md lg:text-lg">{info.getValue()}</span>,
     }),
 
     columnHelper.accessor("social_media", {
       header: () => <span className="font-arabic font-bold">سوشال ميديا</span>,
-      cell: (info) => <span className="font-arabic">{info.getValue()}</span>,
+      cell: (info) => <span className="font-arabic text-md lg:text-lg">{info.getValue()}</span>,
     }),
 
     columnHelper.accessor("extra_data", {
       header: () => (
         <span className="font-arabic font-bold">بيانات إضافية</span>
       ),
-      cell: (info) => <span className="font-arabic">{info.getValue()}</span>,
+      cell: (info) => <span className="font-arabic text-md lg:text-lg">{info.getValue()}</span>,
     }),
 
     columnHelper.accessor("price", {
       header: () => (
         <span className="font-arabic font-bold">سعر الباقة /ريال</span>
       ),
-      cell: (info) => <span className="font-arabic">{info.getValue()}</span>,
+      cell: (info) => <span className="font-arabic text-md lg:text-lg">{info.getValue()}</span>,
     }),
 
     columnHelper.accessor("validity", {
       header: () => <span className="font-arabic font-bold">الصلاحية</span>,
-      cell: (info) => <span className="font-arabic">{info.getValue()}</span>,
+      cell: (info) => <span className="font-arabic text-md lg:text-lg">{info.getValue()}</span>,
     }),
 
     columnHelper.accessor("activation_code", {
       header: () => <span className="font-arabic font-bold">رمز التفعيل</span>,
-      cell: (info) => <span className="font-arabic" dir="ltr">{info.getValue()}</span>,
+      cell: (info) => <span className="font-arabic text-md lg:text-lg" dir="ltr">{info.getValue()}</span>,
     }),
   ];
 
@@ -429,9 +429,9 @@ function App() {
               src={genie4}
               alt="Magic Lantern"
               className={`mt-10 sm:mt-16 lg:mt-20 w-[80%] max-w-[300px] sm:max-w-[500px] lg:max-w-[auto] 
-                    relative z-10 object-contain scale-150 md:scale-250 rounded-md transition-all duration-700 ease-in-out 
+                    relative z-10 object-contain scale-120 md:scale-250 rounded-md transition-all duration-700 ease-in-out 
                     ${isVisible.yallaGenie
-                  ? "opacity-100 -translate-x-1 md:translate-x-5 -translate-y-10 md:-translate-y-28"
+                  ? "opacity-100 translate-x-5 -translate-y-4 md:-translate-y-28"
                   : "opacity-0 translate-y-10"
                 }`}
             />
@@ -448,11 +448,51 @@ function App() {
 
       <div className="mt-20"></div>
 
+
       <Table
         columns={yallaPackageColumns}
         data={yallaPackageData}
         title={<p>باقات يلا</p>}
       />
+      <div className="mt-5"></div>
+
+      <p className=" font-bold text-right text-xl px-[13%] font-arabic" dir="rtl">
+        سيتم تطبيق سياسة الاستخدام العادل علي باقات
+        البيانات اللا محدودة  (10 جيجابايت في اليوم)
+      </p>
+      <div className="mt-20"></div>
+
+      <Table
+        data={allNetworksData}
+        columns={networkColumns}
+        title={
+          <p>
+            باقات المكالمات المحلية اللامحدودة{" "}
+            <span className="text-[#1F295D]">علي جميع الشبكات</span>
+          </p>
+        }
+      />
+      <div className="mt-20"></div>
+
+      <Table
+        data={libaraNetworkData}
+        columns={networkColumns}
+        title={
+          <p>
+            باقات المكالمات المحلية اللامحدودة{" "}
+            <span className="text-[#1F295D]">علي شبكة ليبارا</span>
+          </p>
+        }
+      />
+
+      <div className="mt-5"></div>
+
+      <p className="font-arabic font-bold text-right text-xl px-[13%]">
+        جميع اسعار الباقات اعلاه <span className="underline">غير شامله</span>{" "}
+        القيمة المضافة*
+      </p>
+
+      <div className="mt-20"></div>
 
       <div className="h-[350px] md:min-h-screen w-full bg-gradient-to-b from-[#00001F] to-[#2E3387] flex items-end justify-center relative overflow-hidden">
         {/* Container Adjusts Layout on Different Screen Sizes */}
@@ -504,50 +544,7 @@ function App() {
           ))}
         </div>
 
-        <div className="mt-20"></div>
 
-        <Table
-          data={allNetworksData}
-          columns={networkColumns}
-          title={
-            <p>
-              باقات المكالمات المحلية اللامحدودة{" "}
-              <span className="text-[#1F295D]">علي جميع الشبكات</span>
-            </p>
-          }
-        />
-        <div className="mt-20"></div>
-
-        <Table
-          data={libaraNetworkData}
-          columns={networkColumns}
-          title={
-            <p>
-              باقات المكالمات المحلية اللامحدودة{" "}
-              <span className="text-[#1F295D]">علي شبكة ليبارا</span>
-            </p>
-          }
-        />
-
-        <div className="mt-5"></div>
-
-        <p className="font-arabic font-bold text-right text-xl px-[13%]">
-          جميع اسعار الباقات اعلاه <span className="underline">غير شامله</span>{" "}
-          القيمة المضافة*
-        </p>
-        <div className="mt-20"></div>
-
-        <Table
-          columns={yallaPackageColumns}
-          data={yallaPackageData}
-          title={<p>باقات يلا</p>}
-        />
-        <div className="mt-5"></div>
-
-        <p className=" font-bold text-right text-xl px-[13%] font-arabic">
-          (10 جيجابايت في اليوم) سيتم تطبيق سياسة الاستخدام العادل علي باقات
-          البيانات اللا محدودة*
-        </p>
 
         <hr className="h-px my-8 bg-[#36BCE7] border-0 " />
         <Table

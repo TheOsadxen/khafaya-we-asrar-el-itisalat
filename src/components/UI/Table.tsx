@@ -43,7 +43,7 @@ export const Table = ({
       {/* Table Container */}
       <div
         ref={tableContainerRef}
-        className="overflow-x-auto px-2 w-full md:w-3/4 flex justify-center mx-auto flex-col"
+        className="overflow-x-auto lg:px-2 w-3/4 flex justify-center mx-auto flex-col"
         dir="rtl"
       >
         <table className="min-w-full bg-white border-collapse">
@@ -52,15 +52,15 @@ export const Table = ({
             {title && (
               <tr>
                 <th colSpan={table.getAllColumns().length}
-                  className="text-xl font-bold font-arabic lg:text-3xl text-center bg-[#39b0e5] text-white py-2 rounded-t-md">
+                  className="text-md font-bold font-arabic lg:text-3xl text-center bg-[#39b0e5] text-white py-2 rounded-t-md">
                   {title}
                 </th>
               </tr>
             )}
             {table.getHeaderGroups().map((headerGroup) => (
-              <tr key={headerGroup.id} className="bg-[#39b0e5] text-white text-lg">
+              <tr key={headerGroup.id} className="bg-[#39b0e5] text-white text-md lg:text-lg">
                 {headerGroup.headers.map((header) => (
-                  <th key={header.id} className="p-3 text-center border border-slate-300">
+                  <th key={header.id} className="p-3 text-center border border-slate-300 text-md lg:text-lg">
                     {header.isPlaceholder ? null : flexRender(header.column.columnDef.header, header.getContext())}
                   </th>
                 ))}
@@ -73,7 +73,7 @@ export const Table = ({
             {table.getRowModel().rows.map((row) => (
               <tr key={row.id} className={row.index % 2 === 0 ? "bg-white" : "bg-gray-50"}>
                 {row.getVisibleCells().map((cell) => (
-                  <td key={cell.id} className="p-3 text-center border border-slate-200">
+                  <td key={cell.id} className="p-3 text-center border border-slate-200 text-md lg:text-lg">
                     {flexRender(cell.column.columnDef.cell, cell.getContext())}
                   </td>
                 ))}

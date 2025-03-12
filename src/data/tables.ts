@@ -129,7 +129,7 @@ export const yallaPackageData = [
     promotionalOffer: "-",
     price: 110,
     validity: "30 يوم",
-    activationCode: "*7777*110 7 #",
+    activationCode: "*7777*1107#",
   },
   {
     package: "يلا 130",
@@ -140,7 +140,7 @@ export const yallaPackageData = [
     promotionalOffer: "-",
     price: 130,
     validity: "30 يوم",
-    activationCode: "*7777 *130 9 #",
+    activationCode: "*7777 *1309#",
   },
   {
     package: "يلا 150",
@@ -162,7 +162,7 @@ export const yallaPackageData = [
     promotionalOffer: "-",
     price: 180,
     validity: "30 يوم",
-    activationCode: "*7777 *180 4 #",
+    activationCode: "*7777 *1804#",
   },
   {
     package: "يلا 220",
@@ -576,7 +576,7 @@ export const flexPackagesData = [
     extra_data: "50 جيجابايت",
     price: "145 ريال",
     validity: "28 يوم",
-    activation_code: "#145*666*",
+    activation_code: "*666*145#",
   },
 ];
 
