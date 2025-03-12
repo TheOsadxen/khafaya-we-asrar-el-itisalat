@@ -429,9 +429,9 @@ function App() {
               src={genie4}
               alt="Magic Lantern"
               className={`mt-10 sm:mt-16 lg:mt-20 w-[80%] max-w-[300px] sm:max-w-[500px] lg:max-w-[auto] 
-                    relative z-10 object-contain scale-120 md:scale-250 rounded-md transition-all duration-700 ease-in-out 
+                    relative z-10 object-contain scale-145 md:scale-250 rounded-md transition-all duration-700 ease-in-out 
                     ${isVisible.yallaGenie
-                  ? "opacity-100 translate-x-5 -translate-y-4 md:-translate-y-28"
+                  ? "opacity-100 translate-x-0 md:translate-x-5 -translate-y-4 md:-translate-y-28"
                   : "opacity-0 translate-y-10"
                 }`}
             />
